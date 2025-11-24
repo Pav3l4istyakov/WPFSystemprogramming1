@@ -10,7 +10,7 @@
         <StackPanel Margin="10">
             <Button Content="Запустить Notepad" Click="LaunchNotepad_Click" />
             <Button Content="Обновить текстовое поле" Click="UpdateTextBox_Click" />
-            <TextBlock x:Name="messageText" FontSize="16" Margin="10" />
+            <TextBlock x:Name="MessageText" FontSize="16" Margin="10" />
         </StackPanel>
     </Grid>
 </Window>

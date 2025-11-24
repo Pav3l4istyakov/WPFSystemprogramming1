@@ -35,21 +35,29 @@ namespace WPFSystemprogramming1
             };
             proc.Start();
             Thread.Sleep(3000);
+            if (!proc.HasExited)
             {
                 if(!proc.HasExited)
                 {
-                    proc.Kill();
+                proc.Kill();
                 }
-            }
+        }
         }
 
         private void UpdateTextBox_Click(object sender, RoutedEventArgs e)
         {
-            Task.Run(() =>
+           
+            Thread text = new Thread(new ThreadStart(() =>
             {
-                string updateText = DateTime.Now.ToString();
-                Dispatcher.Invoke(() => messageText.Text = updateText);
-            });
+                string UpdateText = DateTime.Now.ToString();
+                this.Dispatcher.Invoke(() =>
+                {
+                    MessageText.Text = UpdateText;
+                });
+            }));
+
+            
+            text.Start();
         }
     }
 }
