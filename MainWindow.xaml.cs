@@ -37,12 +37,10 @@ namespace WPFSystemprogramming1
             Thread.Sleep(3000);
             if (!proc.HasExited)
             {
-                if(!proc.HasExited)
-                {
                 proc.Kill();
-                }
+            }
         }
-        }
+        
 
         private void UpdateTextBox_Click(object sender, RoutedEventArgs e)
         {
